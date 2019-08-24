@@ -1,0 +1,77 @@
+<!-- Validation failure messages -->
+<% if @trip.errors.any? %>
+  <% @trip.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit trip #<%= @trip.id %>
+</h1>
+
+<hr>
+
+<!-- Form trip start -->
+<form action="/update_trip/<%= @trip.id %>" method="post">
+<!-- Form trip end -->
+
+  <!-- Label and input for journey_name start -->
+  <div class="form-group">
+    <label for="journey_name">
+      Journey name
+    </label>
+
+    <!-- Input for journey_name start -->
+    <input type="text" id="journey_name" name="journey_name" class="form-control" value="<%= @trip.journey_name %>">
+    <!-- Input for journey_name end -->
+  </div>
+  <!-- Label and input for journey_name end -->
+
+  <!-- Label and input for start_date start -->
+  <div class="form-group">
+    <label for="start_date">
+      Start date
+    </label>
+
+    <!-- Input for start_date start -->
+    <input type="text" id="start_date" name="start_date" class="form-control" value="<%= @trip.start_date %>">
+    <!-- Input for start_date end -->
+  </div>
+  <!-- Label and input for start_date end -->
+
+  <!-- Label and input for end_date start -->
+  <div class="form-group">
+    <label for="end_date">
+      End date
+    </label>
+
+    <!-- Input for end_date start -->
+    <input type="text" id="end_date" name="end_date" class="form-control" value="<%= @trip.end_date %>">
+    <!-- Input for end_date end -->
+  </div>
+  <!-- Label and input for end_date end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @trip.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update trip
+  </button>
+</form>
+
+<hr>
+
+<a href="/trips">
+  Go back
+</a>
