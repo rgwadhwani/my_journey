@@ -88,7 +88,11 @@
 
         <!-- Display destination.trip_id start -->
         <td>
-          <%= destination.trip.id %>
+          <% if destination.trip.present? %>
+            <a href="/trips/<%= destination.trip.id %>">
+              <%= destination.trip.id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display destination.trip_id end -->
 

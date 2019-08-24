@@ -84,7 +84,11 @@
 
         <!-- Display trip.user_id start -->
         <td>
-          <%= trip.user.id %>
+          <% if trip.user.present? %>
+            <a href="/users/<%= trip.user.id %>">
+              <%= trip.user.id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display trip.user_id end -->
 
