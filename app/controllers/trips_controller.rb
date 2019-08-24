@@ -47,7 +47,7 @@ class TripsController < ApplicationController
     @trip.journey_name = params.fetch("journey_name")
     @trip.start_date = params.fetch("start_date")
     @trip.end_date = params.fetch("end_date")
-    @trip.user_id = params.fetch("user_id")
+    
 
     if @trip.valid?
       @trip.save
