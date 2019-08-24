@@ -10,7 +10,7 @@ class TripsController < ApplicationController
   end
 
   def index
-    @trips = Trip.all
+    @trips = current_user.trips.page(params[:page]).per(10)
 
     render("trip_templates/index.html.erb")
   end
