@@ -4,69 +4,47 @@
 
 <hr>
 
-<!-- Form destination start -->
 <form action="/update_destination/<%= @destination.id %>" method="post">
-<!-- Form destination end -->
 
-  <!-- Label and input for city_name start -->
   <div class="form-group">
     <label for="city_name">
       City name
     </label>
 
-    <!-- Input for city_name start -->
     <input type="text" id="city_name" name="city_name" class="form-control" value="<%= @destination.city_name %>">
-    <!-- Input for city_name end -->
   </div>
-  <!-- Label and input for city_name end -->
 
-  <!-- Label and input for arrival_date start -->
   <div class="form-group">
     <label for="arrival_date">
       Arrival date
     </label>
 
-    <!-- Input for arrival_date start -->
     <input type="text" id="arrival_date" name="arrival_date" class="form-control" value="<%= @destination.arrival_date %>">
-    <!-- Input for arrival_date end -->
   </div>
-  <!-- Label and input for arrival_date end -->
 
-  <!-- Label and input for departure_date start -->
   <div class="form-group">
     <label for="departure_date">
       Departure date
     </label>
 
-    <!-- Input for departure_date start -->
     <input type="text" id="departure_date" name="departure_date" class="form-control" value="<%= @destination.departure_date %>">
-    <!-- Input for departure_date end -->
   </div>
-  <!-- Label and input for departure_date end -->
 
-  <!-- Label and input for trip_id start -->
   <div class="form-group">
     <label for="trip_id">
       Trip
     </label>
 
-    <!-- Input for trip_id start -->
     <%= select_tag(:trip_id, options_from_collection_for_select(Trip.all, :id, :id, @destination.trip_id), :class => "form-control") %>
-    <!-- Input for trip_id end -->
   </div>
-  <!-- Label and input for trip_id end -->
 
-  <!-- Label and input for country_name start -->
   <div class="form-group">
     <label for="country_name">
       Country name
     </label>
 
-    <!-- Input for country_name start -->
     <input type="text" id="country_name" name="country_name" class="form-control" value="<%= @destination.country_name %>">
-    <!-- Input for country_name end -->
   </div>
-  <!-- Label and input for country_name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update destination
