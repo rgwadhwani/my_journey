@@ -35,6 +35,24 @@ class DestinationsController < ApplicationController
     end
   end
 
+  def create_row_from_trip
+    @destination = Destination.new
+
+    @destination.city_name = params.fetch("city_name")
+    @destination.arrival_date = params.fetch("arrival_date")
+    @destination.departure_date = params.fetch("departure_date")
+    @destination.trip_id = params.fetch("trip_id")
+    @destination.country_name = params.fetch("country_name")
+
+    if @destination.valid?
+      @destination.save
+
+      redirect_to("/trips/#{@destination.trip_id}", notice: "Destination created successfully.")
+    else
+      render("destination_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @destination = Destination.find(params.fetch("prefill_with_id"))
 
